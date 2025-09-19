@@ -1,0 +1,238 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    touch-action: pan-y;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Header */
+.header {
+    background-color: #27b99b;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 22px;
+    font-weight: 400;
+    position: fixed;
+    top: 0;
+    width: 200%;
+    box-sizing: border-box;
+    z-index: 100;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+/* Aggiungi questa regola al tuo file CSS */
+.ticket-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    height: 100%;
+}
+
+/* Le altre regole CSS restano invariate */
+/* ... */
+
+.header .plus-icon {
+    font-size: 24px;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+/* Ticket List */
+.ticket-list {
+    padding-top: 55px;
+    padding-bottom: 60px;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+/* Contenitore principale del biglietto */
+.ticket-item {
+    position: relative; /* Base per posizionare il video e il contenuto */
+    background-color: transparent; /* Rimosso lo sfondo bianco */
+    margin: 0;
+    padding: 0;
+    height: 100px; /* Altezza fissa per visualizzare il video */
+    border-bottom: 1px solid #e0e0e0;
+    overflow: hidden; /* Nasconde le parti del video che escono dal contenitore */
+}
+
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.ticket-item:first-child {
+    border-top: 1px solid #e0e0e0;
+}
+
+/* Contenitore per il video di sfondo */
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Assicura che sia dietro il contenuto */
+    pointer-events: none; /* Permette di cliccare attraverso il video */
+}
+
+.video-background video {
+    width: 100%;
+    height: 105%;
+    object-fit: cover; /* Assicura che il video copra tutto lo spazio */
+}
+
+/* Contenitore del contenuto testuale */
+.ticket-content {
+    position: relative;
+    z-index: 1; /* Assicura che sia sopra il video */
+    padding: 18px 40px; /* Spazio interno per il testo */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* All'interno della classe .ticket-details .ticket-info */
+.ticket-details .ticket-info .bus-icon {
+    margin-right: 8px;
+    width: 18px;  /* Dimensione corretta dell'icona */
+    height: 18px; /* Dimensione corretta dell'icona */
+    fill: #999;
+}
+
+.ticket-details p {
+    margin: 0px;
+    border-left: 10px;
+}
+
+.company-name{
+    color: #666;
+    font-weight: 100px;
+    font-size: 17px;
+    margin-bottom: 0px;
+    padding: 0px 1px;
+
+}
+
+.ticket-details {
+    color: #666;
+    font-weight: 100px;
+    font-size: 16px;
+    margin-bottom: 0px;
+}
+
+
+.ticket-details .ticket-info {
+    font-size: 17px;
+    color: #505050;
+    display: flex;
+    margin-top: 0px;
+    align-items: center;
+    line-height: 1.3;
+}
+
+.ticket-details .ticket-info .bus-icon {
+    margin-right: 8px;
+    width: 18px;
+    height: 18px;
+    fill: #999;
+}
+
+.ticket-details .ticket-status {
+    font-size: 13px;
+    color: #888;
+    margin-top: 4px;
+}
+
+.ticket-count {
+    color: #666;
+    font-size: 13px;
+    text-align: right;
+    margin-top: 2px;
+}
+
+/* Stile per il tempo rimanente */
+.remaining-time {
+    font-size: 15px;
+    color: #666;
+    text-align: right;
+    margin-left: 10px;
+    white-space: nowrap;
+    position: absolute; /* Posiziona il testo del tempo sopra il video */
+    bottom: 18px;
+    right: 16px;
+    z-index: 2;
+}
+
+/* Footer */
+.footer {
+    background-color: #27b99b;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    padding: 8px 0;
+    height: 60px;
+    z-index: 100;
+    border-top: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.footer-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 11px;
+    text-decoration: none;
+    flex: 1;
+    padding-top: 5px;
+}
+
+.footer-item.active {
+    color: white;
+    font-weight: 600;
+}
+
+.footer-item:not(.active) {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-item .icon {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 2px;
+}
+
+.footer-item .icon.active {
+    fill: white;
+    stroke: white;
+}
+
+.footer-item .icon:not(.active) {
+    fill: rgba(255, 255, 255, 0.6);
+    stroke: rgba(255, 255, 255, 0.6);
+}
+
+/* Sezioni non utilizzate nell'attuale implementazione */
+.status-bar, .reacquista-button, .ticket-count, .ticket-actions, .ticket-status {
+    display: none;
+}
