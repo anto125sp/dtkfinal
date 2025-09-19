@@ -20,7 +20,9 @@ body {
 .ticket-header a {
     color: #ffffff;
 }
-
+a {
+    -webkit-tap-highlight-color: transparent;
+}
 /* Freccia Indietro (Forzato su bianco) */
 .ticket-header a .back-arrow-svg {
     color: #ffffff;
@@ -184,3 +186,4 @@ body {
     opacity: 1;
     transition: opacity 0.3s ease-in-out;
 }
+
