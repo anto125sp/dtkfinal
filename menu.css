@@ -185,6 +185,7 @@ a {
     color: white;
     position: fixed;
     bottom: 0;
+    font-size: 24px;
     width: 100%;
     box-sizing: border-box;
     display: flex;
@@ -235,4 +236,5 @@ a {
 /* Sezioni non utilizzate nell'attuale implementazione */
 .status-bar, .reacquista-button, .ticket-count, .ticket-actions, .ticket-status {
     display: none;
+
 }
