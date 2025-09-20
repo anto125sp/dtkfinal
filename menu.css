@@ -27,24 +27,19 @@ body {
     font-weight: 400;
     position: fixed;
     top: 0;
-    width: 200%;
+    width: 100%;
     box-sizing: border-box;
     z-index: 100;
     box-shadow: none;
     border-radius: 0;
 }
-
-/* Aggiungi questa regola al tuo file CSS */
-.ticket-link {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-    width: 100%;
-    height: 100%;
+        
+.shop-icon-header {
+    width: 25px;
+    height: 20px;
+    margin-left: auto;
+    margin-right: -10px; /* Spazio tra l'icona e il segno + */
 }
-
-/* Le altre regole CSS restano invariate */
-/* ... */
 
 .header .plus-icon {
     font-size: 24px;
@@ -62,13 +57,13 @@ body {
 
 /* Contenitore principale del biglietto */
 .ticket-item {
-    position: relative; /* Base per posizionare il video e il contenuto */
-    background-color: transparent; /* Rimosso lo sfondo bianco */
+    position: relative;
+    background-color: transparent;
     margin: 0;
     padding: 0;
-    height: 100px; /* Altezza fissa per visualizzare il video */
+    height: 100px;
     border-bottom: 1px solid #e0e0e0;
-    overflow: hidden; /* Nasconde le parti del video che escono dal contenitore */
+    overflow: hidden;
 }
 
 a {
@@ -86,33 +81,31 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 0; /* Assicura che sia dietro il contenuto */
-    pointer-events: none; /* Permette di cliccare attraverso il video */
+    z-index: 0;
+    pointer-events: none;
 }
 
 .video-background video {
     width: 100%;
     height: 105%;
-    object-fit: cover; /* Assicura che il video copra tutto lo spazio */
+    object-fit: cover;
 }
 
 /* Contenitore del contenuto testuale */
 .ticket-content {
     position: relative;
-    z-index: 1; /* Assicura che sia sopra il video */
-    padding: 18px 40px; /* Spazio interno per il testo */
+    z-index: 1;
+    padding: 18px 40px;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-/* All'interno della classe .ticket-details .ticket-info */
 .ticket-details .ticket-info .bus-icon {
     margin-right: 8px;
-    width: 18px;  /* Dimensione corretta dell'icona */
-    height: 18px; /* Dimensione corretta dell'icona */
-    fill: #999;
+    width: 18px;
+    height: 18px;
 }
 
 .ticket-details p {
@@ -126,7 +119,6 @@ a {
     font-size: 17px;
     margin-bottom: 0px;
     padding: 0px 1px;
-
 }
 
 .ticket-details {
@@ -135,7 +127,6 @@ a {
     font-size: 16px;
     margin-bottom: 0px;
 }
-
 
 .ticket-details .ticket-info {
     font-size: 17px;
@@ -150,7 +141,6 @@ a {
     margin-right: 8px;
     width: 18px;
     height: 18px;
-    fill: #999;
 }
 
 .ticket-details .ticket-status {
@@ -173,7 +163,7 @@ a {
     text-align: right;
     margin-left: 10px;
     white-space: nowrap;
-    position: absolute; /* Posiziona il testo del tempo sopra il video */
+    position: absolute;
     bottom: 18px;
     right: 16px;
     z-index: 2;
@@ -205,7 +195,7 @@ a {
     font-size: 11px;
     text-decoration: none;
     flex: 1;
-    padding-top: 5px;
+    padding-top: 0px;
 }
 
 .footer-item.active {
@@ -217,24 +207,42 @@ a {
     color: rgba(255, 255, 255, 0.6);
 }
 
-.footer-item .icon {
-    width: 24px;
-    height: 24px;
+.shop-icon {
+    width: 50px !important;
+    height: 50px !important;
     margin-bottom: 2px;
+    margin-top: -6px;
 }
 
-.footer-item .icon.active {
-    fill: white;
-    stroke: white;
+.biglietti-icon {
+    width: 60px !important;
+    height: 60px !important;
+    margin-bottom: 2px;
+    margin-top: -8px;
 }
 
-.footer-item .icon:not(.active) {
-    fill: rgba(255, 255, 255, 0.6);
-    stroke: rgba(255, 255, 255, 0.6);
+.nome-icon {
+    width: 100px !important;
+    height: 100px !important;
+    margin-bottom: 2px;
+    margin-top: -6px;
 }
 
 /* Sezioni non utilizzate nell'attuale implementazione */
 .status-bar, .reacquista-button, .ticket-count, .ticket-actions, .ticket-status {
     display: none;
+}
 
+.footer-item {
+    text-decoration: none !important;
+}
+
+/* Aggiungi questa regola al tuo file menu.css */
+a {
+    text-decoration: none !important;
+}
+
+.ticket-link {
+    text-decoration: none !important;
+    display: block;
 }
