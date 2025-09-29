@@ -8,7 +8,27 @@
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#009688">
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-</head>
+    
+    <style>
+        body {
+            /* Impedisce ai sistemi operativi mobili di mostrare il menu "Scarica/Salva" (cruciale per il video) */
+            -webkit-touch-callout: none;
+            
+            /* Impedisce la selezione di testo/immagini su tutta la pagina, bloccando i menu contestuali */
+            user-select: none;
+            -webkit-user-select: none; 
+            -moz-user-select: none;    
+            -ms-user-select: none;     
+        }
+        
+        /* Regola aggiuntiva per il video */
+        .video-container video {
+            -webkit-touch-callout: none;
+            /* Rimuove tutti gli eventi touch/mouse sul video stesso, rendendolo non interattivo */
+            pointer-events: none; 
+        }
+    </style>
+    </head>
 <body>
 
     <div id="loading-animation-container">
@@ -17,7 +37,7 @@
             src="refresh.json"
             background="transparent"
             speed="1"
-            style="width: 150px; height: 150px;"
+            style="width: 100px; height: 100px;"
             autoplay
             loop>
         </lottie-player>
@@ -90,6 +110,11 @@
     </main>
 
     <script>
+        // AGGIUNTO: Blocca l'evento "contextmenu" (click destro/pressione prolungata) su tutta la pagina.
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault(); 
+        }, false);
+        
         document.addEventListener('DOMContentLoaded', () => {
             const loadingAnimationContainer = document.getElementById('loading-animation-container');
             
@@ -99,7 +124,7 @@
                 setTimeout(() => {
                     loadingAnimationContainer.style.display = 'none';
                 }, 300); // Ritardo per la transizione di opacità
-            }, 500); // Mostra l'animazione per 2 secondi
+            }, 500); // Mostra l'animazione per 0,5 secondi
 
             // Funzione per aggiornare il tempo rimanente
             function updateRemainingTime() {
@@ -174,6 +199,3 @@
     </script>
 </body>
 </html>
-
-
-
