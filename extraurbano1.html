@@ -8,6 +8,26 @@
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#009688">
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    
+    <style>
+        body {
+            /* Impedisce al browser di mostrare il menu "Apri/Salva" quando si tiene premuto */
+            -webkit-touch-callout: none;
+            
+            /* Rende anche il testo e le immagini non selezionabili, il che aiuta a bloccare i menu di contesto */
+            user-select: none;
+            -webkit-user-select: none; 
+            -moz-user-select: none;    
+            -ms-user-select: none;     
+        }
+        
+        /* Assicura che anche l'elemento video non mostri i menu di contesto predefiniti del sistema */
+        .video-container video {
+            -webkit-touch-callout: none;
+            pointer-events: none; /* Rimuove tutti gli eventi del mouse/touch sul video stesso, rendendolo non interattivo */
+        }
+    </style>
+
 </head>
 <body>
 
@@ -90,6 +110,13 @@
     </main>
 
     <script>
+        // 2. SOLUZIONE JAVASCRIPT GLOBALE: Blocca l'evento "contextmenu" su tutta la pagina.
+        // Questo impedisce il click destro (desktop) e la pressione prolungata (mobile) ovunque.
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault(); 
+        }, false);
+        
+        
         document.addEventListener('DOMContentLoaded', () => {
             const loadingAnimationContainer = document.getElementById('loading-animation-container');
             
@@ -174,8 +201,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
