@@ -170,20 +170,22 @@ body {
     text-align: right;
 }
 
-/* --- ANIMAZIONE DI CARICAMENTO --- */
+/* * --- ANIMAZIONE DI CARICAMENTO --- 
+* Aggiornato per Full Screen (copertura 100% dell'area) 
+*/
 #loading-animation-container {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw; /* Usa 100% della larghezza della viewport */
+    height: 100vh; /* Usa 100% dell'altezza della viewport */
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.7);
+    /* Reso lo sfondo bianco opaco per bloccare completamente la vista */
+    background-color: #ffffff; 
     z-index: 9999;
     opacity: 1;
     transition: opacity 0.3s ease-in-out;
 
 }
-
