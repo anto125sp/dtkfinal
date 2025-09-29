@@ -175,8 +175,8 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 50%;
-    height: 50%;
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -186,3 +186,4 @@ body {
     transition: opacity 0.3s ease-in-out;
 
 }
+
